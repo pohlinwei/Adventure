@@ -1,0 +1,804 @@
+<html>
+    <head>
+        <title>{Title}</title>
+        <link rel="shortcut icon" href="{image:Favicon}">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+        {block:Description}
+            <meta name="description" content="{MetaDescription}" />
+        {/block:Description}
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <!--import font-->
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Raleway" rel="stylesheet">
+        <!--End of font import-->
+        <style  type="text/css">
+            body{
+                overflow-x: hidden;
+            }
+            div{
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            #div1{
+                background: url({image:Header}) no-repeat center center fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                height: 700px;
+                width: 100%;
+            }
+            #visible-navbar1{
+                background-color: rgba(31, 46, 46, .5);
+                padding-top: 40px;
+                padding-bottom: 20px;
+                margin-top: -50px;
+                margin-left: -55px;
+                margin-right: -55px;
+            }
+            .name{
+                color: #ffffff;
+                text-transform: uppercase;
+            }
+            .navigation > li{
+                list-style-type: none;
+                display: inline;
+                text-transform: uppercase;
+            }
+            .navigation > li > a{
+                color: #ffffff;
+                text-decoration: none;
+                font-weight: bold;
+            }
+            .navigation > li > a:hover{
+                 font-size: 15;
+            }
+            .peripheral{
+                padding: 15px;
+            }
+            #important{
+                border: 3px solid white;
+                padding: 10px;
+                margin: 5px;
+            }
+            #important > p{
+                font-size: 14px;
+                font-weight: bold;
+                margin-bottom: -2px;
+            }
+            /*dropdown*/
+            /*large*/
+            .dropdown-content-large {
+                list-style-type:none;
+            }
+            
+            .dropdown-content-large{ 
+                margin-top: 12px;
+                margin-left: -12px;
+                list-style-type: none;
+                display: none;
+                position: absolute;
+                width: 90px;
+                overflow: auto;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.7);
+                background-color: rgba(255, 255, 255, 0.7);
+            }
+
+            .dropdown-content-large a {
+                color: black;
+                padding: 10px;
+                text-decoration: none;
+                margin-left: -50px;
+                margin-top: 10px;
+                display: block;
+            }
+            .dropdown-content-large a:hover{
+                background-color: #ffffff;
+            }
+
+            /*small*/
+            .dropdown-content{
+                list-style-type:none;
+            }
+            .dropbtn {
+                color: #ffffff;
+                font-size: 14px;
+                border: none;
+                cursor: pointer;
+            }
+            .dropbtn:hover {
+                text-decoration: none;
+                color: white;
+            }
+            .dropdown {
+                position: relative;
+                display: inline-block;
+            }
+
+            .dropdown-content {
+                margin-top: 11px;
+                margin-left: -12px;
+                list-style-type: none;
+                display: none;
+                position: absolute;
+                min-width: 100px;
+                overflow: auto;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.7);
+                background-color: rgba(255, 255, 255, 0.7);
+            }
+
+            .dropdown-content a {
+                color: black;
+                padding: 10px;
+                text-decoration: none;
+                margin-left: -50px;
+                margin-top: 10px;
+                display: block;
+                text-align: left;
+            }
+            .dropdown-content a:hover{
+                background-color: #ffffff;
+            }
+            .show {display:block;}
+
+            /*small screen navbar*/
+            #visible-navbar2{
+                background-color: rgba(31, 46, 46, .5);
+                padding-top: 20px;
+                padding-bottom: 20px;
+                margin-top: -50px;
+            }
+            .nav2{
+                text-align: center;
+                margin-top: 20px;
+                display: inline;
+            }
+            #highlight-name{
+                font-size: 50;
+            }
+            #dashed{
+                border-bottom: 2px dashed;
+            }
+            /*end of small screen navbar*/
+            #main-message{
+                color: #ffffff;
+                font-size: 70px;
+                margin-top: 200px;
+                text-align: center;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+            #sub-message{
+                text-align: center;
+                margin-top: 70px;
+            }
+            /*small screen header*/
+            #small-main-message{
+                color: #ffffff;
+                font-size: 40px;
+                margin-top: 200px;
+                text-align: center;
+                font-weight: 400;
+                text-transform: uppercase;
+            }
+            /*Main content*/
+            #small-div2{
+                overflow: auto;
+                width: 100%;
+                margin-top:-30px;
+                background-color: rgba(243, 229, 216, 0.5);
+            }
+            /*Highlights*/
+            .highlights-post{
+                background-color: #ffffff;
+                margin: 70px 60px;
+                border: solid black;
+            }
+            .post-title{
+                margin: 15px;
+            }
+            #title{
+                text-decoration: none;
+                font-family: 'Playfair Display', serif;
+                color: #000000;
+                font-size: 45px;
+            }
+            .highlights-post > p{
+                padding: 10px;
+                font-family: 'Raleway', sans-serif;
+                margin-left: 5px;
+                margin-right: 5px;
+            }
+            .highlights-photo{
+                background-color: #ffffff;
+                margin: 70px 60px;
+                border: solid black;
+            }
+            .photo{
+                margin: 30px;
+                text-align: center;
+            }
+            .caption{
+                padding: 10px;
+                padding-left:30px;
+                font-family: 'Raleway', sans-serif;
+                margin-left: 5px;
+                margin-right: 5px;
+            }
+            #datePhoto{
+                font-family: helvetica;
+                color: #999999;
+                margin-left: 30px;
+                font-size: 15;
+            }
+            #date{
+                font-family: helvetica;
+                color: #999999;
+                font-size: 15;
+                margin-bottom: 0px;
+            }
+            #excerpt{
+                font-family: helvetica;
+                
+            }
+            #thoughts{
+                margin-bottom: -35px;
+            }
+            .reblog{
+                font-family: helvetica;
+                color: #999999;
+                font-size: 15;
+                margin-bottom: 0px;
+            }
+            .reblog-photo{
+                font-family: helvetica;
+                color: #999999;
+                margin-left: 30px;
+                font-size: 15;
+                text-transform: lowercase;
+            }
+            .photo-link{
+                text-decoration: none;
+            }
+            #tag{
+                padding: 10px;
+                font-family: 'Raleway', sans-serif;
+                margin-left: 5px;
+                margin-right: 5px;
+                font-size: 15;
+                font-style: italic;
+                text-decoration: none;
+                color: black;
+            }
+            #tools{
+                padding: 10px;
+                font-family: 'Raleway', sans-serif;
+                margin-left: 5px;
+                margin-right: 5px;
+                font-size: 15;
+                text-decoration: none;
+                color: black;
+                margin-top: 5px;
+            }
+            #tag-title{
+                padding: 10px;
+                font-family: 'Raleway', sans-serif;
+                margin-left: 5px;
+                margin-right: 5px;
+                font-size: 15;
+            }
+            .audio{
+                padding-top: 35px;
+                text-align: center;
+            }
+            /*Pagination*/
+            #pagination{
+                text-align: center;
+                margin: auto;
+            }
+            #pagination > a{
+                text-decoration: none;
+                color: #595959;
+            }
+            /*Footer*/
+            #footer{
+                background-color: rgb(26, 26, 26);
+                margin-top: -30px;
+                overflow: auto;
+            }
+            .footer-title{
+                color: #ffffff;
+            }
+           
+            #uppercase{
+                text-transform: uppercase;
+            }
+            /*Large Screen*/
+            #contact-bar{
+                border-right: 0.5px solid #fff;
+            }
+            .contact{
+                padding-bottom: 12px;
+            }
+            .contact-me{
+                text-transform: uppercase;
+                color: #ffffff;
+                text-decoration: none;
+            }
+            .contact-me:hover{
+                text-decoration: none;
+                color: rgb(102, 102, 102);
+            }
+            .navi-title-box{
+                margin-top: 10px;
+                margin-bottom: -5px;
+            }
+            .navi-title{
+                color: #fff;
+                font-family: 'Raleway', sans-serif;
+                font-size: 15;
+                text-decoration: none;
+            }
+            .navi > a{
+                text-transform: lowercase;
+            }
+            #footer2{
+                background-color: rgb(26, 26, 26);
+                padding-top: 10px;
+                overflow: auto;
+            }
+            .rights{
+                text-align: center;
+                color: #ffffff;
+            }
+            /*Small screen*/
+            .footer-title-small{
+                text-align: center;
+            }
+            .footer-small{
+                display: inline;
+            }
+            .author-picture{
+                padding-top: 30px;
+                text-align: center;
+            }
+            .contact-bar-small{
+                border-top: 0.5px solid rgb(102, 102, 102);
+                border-bottom: 0.5px solid rgb(102, 102, 102);
+                margin: 50px auto 20px auto;
+                padding: 10px;
+                width: 60%;
+            }
+            #centralise{
+                text-align: center;
+            }
+        </style>
+        <script>
+            /* When the user clicks on the button, toggle between hiding and showing the dropdown content */
+        var i = 0;
+        function myFunction1() {
+            if (i==0){
+            $("#myDropdown").show(1);
+            return i += 1;
+            }
+        else{
+            $("#myDropdown").hide(1);
+            return i -= 1;
+            }
+        }
+        function myFunction2() {
+            if (i==0){
+            $("#myDropdownLarge").show(1);
+            return i += 1;
+            }
+        else{
+            $("#myDropdownLarge").hide(1);
+            return i -= 1;
+            }
+        }
+</script>
+
+        
+    </head>
+    <body>
+    <!--define meta-->
+    <meta name="image:Header" content="https://static.pexels.com/photos/6473/camera-photographer-yellow-photography.jpg">
+    <meta name="image:Favicon" content="http://s6.favim.com/orig/60/girl-hair-nature-photography-Favim.com-540263.jpg">
+    <meta name="text:complete blog url" content="http://mymisadventure.tumblr.com/">
+    <meta name="text:navbar 1" content="home">
+    <meta name="text:navbar 1 url" content="/">
+    <meta name="text:navbar 2" content="about me">
+    <meta name="text:navbar 2 url" content="/">    
+    <meta name="text:navbar 3" content="read">
+    <meta name="text:main message" content="my misadventure">
+    <meta name="text:dropdown 1" content="opinions">
+    <meta name="text:dropdown 1 url" content="/">
+    <meta name="text:dropdown 2" content="poems">
+    <meta name="text:dropdown 2 url" content="/">
+    <meta name="text:dropdown 3" content="book reviews">
+    <meta name="text:dropdown 3 url" content="/">
+    <meta name="text:dropdown 4" content="personal">
+    <meta name="text:dropdown 4 url" content="/">
+    <meta name="text:dropdown 5" content="reblogs">
+    <meta name="text:dropdown 5 url" content="/">
+    <meta name="text:dropdown 6" content="original works">
+    <meta name="text:dropdown 6 url" content="/">
+    <meta name="image:Main" content="https://s-media-cache-ak0.pinimg.com/564x/cb/3c/5b/cb3c5b66a0e9d0ccc41be28499a81764.jpg">
+    <meta name="image:user" content="https://static.pexels.com/photos/7529/pexels-photo.jpeg">
+    <meta name="text:alias" content="misadventure">
+    <meta name="text:contact me url 1" content="/">
+    <meta name="text:contact me 1" content="google plus">
+    <meta name="text:contact me url 2" content="/">
+    <meta name="text:contact me 2" content="vsco">
+    <meta name="text:contact me url 3" content="/">
+    <meta name="text:contact me 3" content="we heart it">
+    <meta name="text:contact me url 4" content="/">
+    <meta name="text:contact me 4" content="youtube">
+    <meta name="text:navigate to tags" content="/tags">
+    <meta name="text:home url" content="/">
+    <meta name="text:cat 1 url" content="/">
+    <meta name="text:cat 1" content="cat 1">
+    <meta name="text:cat 2 url" content="/">
+    <meta name="text:cat 2" content="cat 2">
+    <meta name="text:cat 3 url" content="/">
+    <meta name="text:cat 3" content="cat 3">
+    <meta name="text:cat 4 url" content="/">
+    <meta name="text:cat 4" content="cat 4">
+    <meta name="text:cat 5 url" content="/">
+    <meta name="text:cat 5" content="cat 5">
+    <meta name="text:cat 6 url" content="/">
+    <meta name="text:cat 6" content="cat 6">
+    <meta name="text:cat 7 url" content="/">
+    <meta name="text:cat 7" content="cat 7">
+    <meta name="text:type 1 url" content="/">
+    <meta name="text:type 1" content="type 1">
+    <meta name="text:type 2 url" content="/">
+    <meta name="text:type 2" content="type 2">
+    <meta name="text:type 3 url" content="/">
+    <meta name="text:type 3" content="type 3">
+    <meta name="text:type 4 url" content="/">
+    <meta name="text:type 4" content="type 4">
+    <meta name="text:type 5 url" content="/">
+    <meta name="text:type 5" content="type 5">
+    <meta name="text:type 6 url" content="/">
+    <meta name="text:type 6" content="type 6">
+    <meta name="text:type 7 url" content="/">
+    <meta name="text:type 7" content="type 7">
+    <meta name="text:type 8 url" content="/">
+    <meta name="text:type 8" content="type 8">
+    <meta name="text:type 9 url" content="/">
+    <meta name="text:type 9" content="type 9">
+    <meta name="text:year" content="2015-2017">
+    
+    <!--end of meta-->
+    <div id="div1" class="jumbotron jumbotron-fluid">
+        <div class="container">
+        <!-- Navigation bar-->
+        <!-- Large screen-->
+        <div class="row hidden-xs" id="visible-navbar1">
+            <div class="col-sm-4">
+             <p class="name">{title}</p>
+            </div>
+            <div class="col-sm-8">
+              <ul class="pull-right navigation">
+                <li class="peripheral"><a href="{text:complete blog url}{text:navbar 1 url}">{text:navbar 1}</a></li>
+                <li class="peripheral"><a href="{text:complete blog url}{text:navbar 2 url}">{text:navbar 2}</a></li>
+                <!--Dropdown-->
+                <li>
+                <div id="important" class="dropdown">
+                 <p class="dropbtn" onclick="myFunction2()">{text:navbar 3} <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></p>
+                 <ul id="myDropdownLarge" class="dropdown-content-large">
+                     <li><a href="{text:complete blog url}tagged{text:dropdown 1 url}">{text:dropdown 1}</a></li>
+                     <li><a href="{text:complete blog url}tagged{text:dropdown 2 url}">{text:dropdown 2}</a></li>
+                     <li><a href="{text:complete blog url}tagged{text:dropdown 3 url}">{text:dropdown 3}</a></li>
+                     <li><a href="{text:complete blog url}tagged{text:dropdown 4 url}">{text:dropdown 4}</a></li>
+                     <li><a href="{text:complete blog url}tagged{text:dropdown 5 url}">{text:dropdown 5}</a></li>
+                     <li><a href="{text:complete blog url}tagged{text:dropdown 6 url}">{text:dropdown 6}</a></li>
+                 </ul>    
+                </div>
+                </li>
+                <!--End of drop down-->
+             </ul>
+            </div>
+        </div>
+        <!-- End of large screen-->
+        <!-- Small screen-->
+        <div class="row visible-xs" id="visible-navbar2">
+            <div class="row" id="dashed">
+             <p class="name visible-xs nav2" id="highlight-name">{title}</p>
+            </div>
+            <div class="row">
+             <ul class="visible-xs navigation nav2">
+                <li class="peripheral"><a href="{text:complete blog url}{text:navbar 1 url}">{text:navbar 1}</a></li>
+                <li class="peripheral"><a href="{text:complete blog url}{text:navbar 2 url}">{text:navbar 2}</a></li>
+                <!--Dropdown-->
+                <li>
+                <div id="important" class="dropdown">
+                 <p class="dropbtn" onclick="myFunction1()">{text:navbar 3} <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></p>
+                  <!--Dropdown content-->
+                    <ul id="myDropdown" class="dropdown-content">
+                        <li><a href="{text:complete blog url}tagged{text:dropdown 1 url}">{text:dropdown 1}</a></li>
+                        <li><a href="{text:complete blog url}tagged{text:dropdown 2 url}">{text:dropdown 2}</a></li>
+                        <li><a href="{text:complete blog url}tagged{text:dropdown 3 url}">{text:dropdown 3}</a></li>
+                        <li><a href="{text:complete blog url}tagged{text:dropdown 4 url}">{text:dropdown 4}</a></li>
+                        <li><a href="{text:complete blog url}tagged{text:dropdown 5 url}">{text:dropdown 5}</a></li>
+                        <li><a href="{text:complete blog url}tagged{text:dropdown 6 url}">{text:dropdown 6}</a></li>
+                    </ul>
+                  </li>
+                  <!--End of dropdown content-->
+                </div>
+                </li>
+                <!--End of drop down-->
+             </ul>
+            </div>
+        </div>
+        <!--End of navigation bar-->
+        <!--Header-->
+        <!--Large screen-->
+        <div class="row hidden-xs">
+            <h1 id="main-message">{text:main message}</h1>
+            {block:Description}
+             <h2 id="sub-message">{Description}</h2>
+        {/block:Description}
+        </div>
+        <!--End of large screen-->
+        <!--Small screen-->
+        <div class="row visible-xs">
+            <h1 id="small-main-message" >{text:main message}</h1>
+            {block:Description}
+             <h2 id="sub-message">{Description}</h2>
+        {/block:Description}
+        </div>
+        <!--End of small screen-->
+        <!--End of header-->
+        </div>
+    </div>
+    <!--End of jumbotron-->
+    <!--Main content-->
+    <div class="jumbotron jumbotron-fluid"  id="small-div2">
+    <div class="container-fluid">
+        <div class="row">
+        <!--Posts-->
+        {block:Posts}
+        <!--Texts-->
+        {block:Text}
+        <div class="highlights-post">
+            {block:Title}
+                <div class="post-title"><h1><a href="{Permalink}" id="title">{Title}</a></h1></div>
+            {/block:Title}
+            {block:Date}
+                <p id="date">Written On: {DayOfMonthWithZero}.{MonthNumberWithZero}.{ShortYear}, {24HourWithZero}:{Minutes}</p>
+            {/block:Date}
+            <p>{Body}</p>
+            {block:RebloggedFrom} 
+                <a href ="{ReblogRootURL}" class="reblog-photo"> - {ReblogRootName}, {ReblogRootTitle}</a>
+            {/block:RebloggedFrom}
+            <!-- {block:HasTags}<p id="tag-title">Tags <span class="glyphicon glyphicon-tag" aria-hidden="true"></span> : </p>{block:Tags}<a href="{TagURLChrono}" id="tag">{TagsAsClasses}, </a> {/block:Tags} {/block:HasTags}-->
+        {block:NoteCount}<p id="tools">{NoteCountWithLabel}</p>{/block:NoteCount}
+        </div>
+        {/block:Text}
+        <!--End of texts-->
+        <!--Links-->
+        {block:Link}
+        <div class="highlights-post">
+            <div class="post-title"><h1><a href="{Permalink}" id="title">{Name}</a></h1></div>
+            {block:Thumbnail} 
+                <div class="photo"><a href="{URL}" class="photo-link"><img class="img-responsive" src="{Thumbnail-HighRes}" alt="Responsive image"/></a></div>
+            {/block:Thumbnail}
+            <p id="date">{block:Host}{Host}, {/block:Host}{block:Author}{Author}{/block:Author}</p>
+            {block:Excerpt} 
+                <p id="excerpt">{Excerpt} <a href="{URL}">...</a></p>
+            {/block:Excerpt}
+            {block:Description} 
+                <p id="thoughts">Thoughts <i class="fa fa-commenting-o" aria-hidden="true"></i> : </p>
+                <p>{Description}</p>
+            {block:Date}<p id="date">Read and Commented On: {DayOfMonthWithZero}.{MonthNumberWithZero}.{ShortYear}, {24HourWithZero}:{Minutes}</p>{/block:Date}
+            {/block:Description}	
+            {block:RebloggedFrom} 
+                <a href ="{ReblogRootURL}" class="reblog-photo"> - {ReblogRootName}, {ReblogRootTitle}</a>
+            {/block:RebloggedFrom}
+            <!-- {block:HasTags}<p id="tag-title">Tags <span class="glyphicon glyphicon-tag" aria-hidden="true"></span> : </p>{block:Tags}<a href="{TagURLChrono}" id="tag">{TagsAsClasses}, </a> {/block:Tags} {/block:HasTags}-->
+        {block:NoteCount}<p id="tools">{NoteCountWithLabel}</p>{/block:NoteCount}
+        </div>
+        {/block:Link}        
+        <!--End of links-->
+        <!--Photos-->
+        {block:Photo}
+        <div class="highlights-photo">
+            <div class="photo"><a href="{Permalink}" class="photo-link"><img class="img-responsive" src="{PhotoURL-500}" alt="{PhotoAlt} Responsive image"/></a></div>
+            {block:Date}
+            <p id="datePhoto">Posted On: {DayOfMonthWithZero}.{MonthNumberWithZero}.{ShortYear}, {24HourWithZero}:{Minutes}</p>
+            {/block:Date}
+            {block:Caption}
+            <div class="caption">{Caption}</div>
+            {/block:Caption}
+            {block:RebloggedFrom} 
+                 <a href ="{ReblogRootURL}" class="reblog-photo"> - {ReblogRootName}, {ReblogRootTitle}</a>
+            {/block:RebloggedFrom}
+            <!-- {block:HasTags}<p id="tag-title">Tags <span class="glyphicon glyphicon-tag" aria-hidden="true"></span> : </p>{block:Tags}<a href="{TagURLChrono}" id="tag">{TagsAsClasses}, </a> {/block:Tags} {/block:HasTags}-->
+        {block:NoteCount}<p id="tools">{NoteCountWithLabel}</p>{/block:NoteCount}
+        </div>
+        {/block:Photo}
+        <!--End of photos-->
+        <!--Photo Set-->
+        {block:Photoset}
+        <div class="highlights-photo">
+            {block:Photos}<div class="photo"><a href="{Permalink}" class="photo-link"><img class="img-responsive" src="{PhotoURL-500}" alt="{PhotoAlt} Responsive image"/></a></div>{/block:Photos}
+            {block:Date}
+            <p id="datePhoto">Posted On: {DayOfMonthWithZero}.{MonthNumberWithZero}.{ShortYear}, {24HourWithZero}:{Minutes}</p>
+            {/block:Date}
+            {block:Caption}
+            <div class="caption">{Caption}</div>
+            {/block:Caption}
+            {block:RebloggedFrom} 
+                 <a href ="{ReblogRootURL}" class="reblog-photo"> - {ReblogRootName}, {ReblogRootTitle}</a>
+            {/block:RebloggedFrom}
+            <!-- {block:HasTags}<p id="tag-title">Tags <span class="glyphicon glyphicon-tag" aria-hidden="true"></span> : </p>{block:Tags}<a href="{TagURLChrono}" id="tag">{TagsAsClasses}, </a> {/block:Tags} {/block:HasTags}-->
+        {block:NoteCount}<p id="tools">{NoteCountWithLabel}</p>{/block:NoteCount}
+        </div>
+        {/block:Photoset}
+        <!--End of photo set-->
+        <!--Quote-->
+        {block:Quote}
+        <div class="highlights-post">
+            <div class="post-title"><h1><a href="{Permalink}" id="title">"{Quote}"</a></h1></div>
+            {block:Source}
+            <p>- {Source}</p>
+            {/block:Source}
+            {block:Date}
+                <p id="date">Written On: {DayOfMonthWithZero}.{MonthNumberWithZero}.{ShortYear}, {24HourWithZero}:{Minutes}</p>
+            {/block:Date}
+            <p>{Body}</p>
+            {block:RebloggedFrom} 
+                <a href ="{ReblogRootURL}" class="reblog-photo"> - {ReblogRootName}, {ReblogRootTitle}</a>
+            {/block:RebloggedFrom}
+            <!-- {block:HasTags}<p id="tag-title">Tags <span class="glyphicon glyphicon-tag" aria-hidden="true"></span> : </p>{block:Tags}<a href="{TagURLChrono}" id="tag">{TagsAsClasses}, </a> {/block:Tags} {/block:HasTags}-->
+        {block:NoteCount}<p id="tools">{NoteCountWithLabel}</p>{/block:NoteCount}
+        </div>
+        {/block:Quote}
+        <!--End of quote-->
+        <!--Audio-->
+        {block:Audio}
+        <div class="highlights-photo">
+        <div class="audio">
+        {block:AudioEmbed} 
+            {AudioEmbed}
+        {/block:AudioEmbed}
+        </div>
+        <p id="datePhoto">{PlayCountWithLabel}</p>
+            {block:Date}
+            <p id="datePhoto">Posted On: {DayOfMonthWithZero}.{MonthNumberWithZero}.{ShortYear}, {24HourWithZero}:{Minutes}</p>
+            {/block:Date}
+            {block:Caption}
+            <div class="caption">{Caption}</div>
+            {/block:Caption}
+            {block:RebloggedFrom} 
+                 <a href ="{ReblogRootURL}" class="reblog-photo"> - {ReblogRootName}, {ReblogRootTitle}</a>
+            {/block:RebloggedFrom}
+             <!-- {block:HasTags}<p id="tag-title">Tags <span class="glyphicon glyphicon-tag" aria-hidden="true"></span> : </p>{block:Tags}<a href="{TagURLChrono}" id="tag">{TagsAsClasses}, </a> {/block:Tags} {/block:HasTags}-->
+        {block:NoteCount}<p id="tools">{NoteCountWithLabel}</p>{/block:NoteCount}
+        </div>
+        {/block:Audio}
+        <!--End of audio-->
+        <!--Video-->
+        {block:Video}
+        <div class="highlights-photo">
+        <div class="audio">
+            {VideoEmbed-500}
+        </div>
+        <p id="datePhoto">{PlayCountWithLabel}</p>
+            {block:Date}
+            <p id="datePhoto">Posted On: {DayOfMonthWithZero}.{MonthNumberWithZero}.{ShortYear}, {24HourWithZero}:{Minutes}</p>
+            {/block:Date}
+            {block:Caption}
+            <div class="caption">{Caption}</div>
+            {/block:Caption}
+            {block:RebloggedFrom} 
+                <a href ="{ReblogRootURL}" class="reblog-photo"> - {ReblogRootName}, {ReblogRootTitle}</a>
+            {/block:RebloggedFrom}
+            <!-- {block:HasTags}<p id="tag-title">Tags <span class="glyphicon glyphicon-tag" aria-hidden="true"></span> : </p>{block:Tags}<a href="{TagURLChrono}" id="tag">{TagsAsClasses}, </a> {/block:Tags} {/block:HasTags}-->
+        {block:NoteCount}<p id="tools">{NoteCountWithLabel}</p>{/block:NoteCount}
+        </div>
+        {/block:Video}
+        <!--End of video-->
+        {/block:Posts}
+        </div>
+        <!--End of posts-->
+    </div>
+    <!--pagination-->
+    <div class="container-fluid">
+    <div class="row">
+    <p id="pagination">{block:Pagination}{block:PreviousPage}<a href="{PreviousPage}"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>&nbsp;</a>{/block:PreviousPage}{/block:Pagination}
+    {block:Pagination} &nbsp; {CurrentPage} &nbsp; {/block:Pagination}
+    {block:Pagination}{block:NextPage}<a href="{NextPage}"> &nbsp;<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>{/block:NextPage}{/block:Pagination}</p>
+
+    </div>
+    </div>
+    <!--end of pagination-->
+    </div>
+    <!--Footer-->
+    <!--Large screen-->
+    <div class="container-fluid hidden-xs">
+    <div class ="row" id="footer">
+        <div class = "col-xs-6">
+            <h1 class= "footer-title footer-title-large">The Author: </h1>
+            <div class = "row">
+            <div class = "col-xs-5">
+                <img src="{image:user}" class="img-circle" alt="Cinque Terre" width="150" height="150">
+            </div>
+            <div class = "col-xs-7" id="contact-bar">
+                <ul class="fa-ul">
+                    <li><div class="contact"><a class="contact-me" href="{text:contact me url 1}"><i class="fa-li fa fa-google-plus-square fa-2x"></i>{text:contact me 1} </a></div></li>
+                    <li><div class="contact"><a class="contact-me" href="{text:contact me url 2}"><i class="fa-li fa fa-instagram fa-2x"></i>{text:contact me 2}</a></div></li>
+                    <li><div class="contact"><a class="contact-me" href="{text:contact me url 3}"><i class="fa-li fa fa-heart fa-2x"></i>{text:contact me 3}</a></div></li>
+                    <li><div class="contact"><a class="contact-me" href="{text:contact me url 4}"><i class="fa-li fa fa-youtube-square fa-2x"></i>{text:contact me 4}</a></div></li>
+                    <li><br></br></li>
+                    <li><br></br></li>
+                </ul>
+            </div>
+            </div>
+        </div>
+        <div class = "col-xs-6">
+            <h1 class= "footer-title footer-title-large">Navigation: </h1>
+            <div class="row" id="navi-bar">
+            <div class="col-xs-6">
+            <ul class="fa-ul">
+                    <li><div><a class="navi-title" href="{text:home url}">Home <span class="glyphicon glyphicon-home"></span></a></div></li>
+                    <li><div class="navi-title-box"><p class="navi-title">By Category</p></div></li>
+                    <li><div class="navi"><a href="{text:complete blog url}tagged{text:cat 1 url}">{text:cat 1} </a></div></li>
+                    <li><div class="navi"><a href="{text:complete blog url}tagged{text:cat 2 url}">{text:cat 2} </a></div></li>
+                    <li><div class="navi"><a href="{text:complete blog url}tagged{text:cat 3 url}">{text:cat 3} </a></div></li>
+                    <li><div class="navi"><a href="{text:complete blog url}tagged{text:cat 4 url}">{text:cat 4} </a></div></li>
+                    <li><div class="navi"><a href="{text:complete blog url}tagged{text:cat 5 url}">{text:cat 5} </a></div></li>
+                    <li><div class="navi"><a href="{text:complete blog url}tagged{text:cat 6 url}">{text:cat 6} </a></div></li>
+                    <li><div class="navi"><a href="{text:complete blog url}tagged{text:cat 7 url}">{text:cat 7}</a></div></li>
+                    <li><div class="navi"><a href="{text:complete blog url}tagged{text:navigate to tags}">more &#xbb;</a></div></li>
+            </ul>
+            </div>
+            <div class="col-xs-6">
+            <ul class="fa-ul">
+                <li><div class="navi-title-box"><p class="navi-title">By Type</p></div></li>
+                <li><div class="navi"><a href="{text:complete blog url}tagged{text:type 1 url}">{text:type 1} </a></div></li>
+                <li><div class="navi"><a href="{text:complete blog url}tagged{text:type 2 url}">{text:type 2} </a></div></li>
+                <li><div class="navi"><a href="{text:complete blog url}tagged{text:type 3 url}">{text:type 3} </a></div></li>
+                <li><div class="navi"><a href="{text:complete blog url}tagged{text:type 4 url}">{text:type 4} </a></div></li>
+                <li><div class="navi"><a href="{text:complete blog url}tagged{text:type 5 url}">{text:type 5} </a></div></li>
+                <li><div class="navi"><a href="{text:complete blog url}tagged{text:type 6 url}">{text:type 6} </a></div></li>
+                <li><div class="navi"><a href="{text:complete blog url}tagged{text:type 7 url}">{text:type 7} </a></div></li>
+                <li><div class="navi"><a href="{text:complete blog url}tagged{text:type 8 url}">{text:type 8} </a></div></li>
+                <li><div class="navi"><a href="{text:complete blog url}tagged{text:type 9 url}">{text:type 9} </a></div></li>
+            </ul> 
+            </div>
+            </div>
+        </div> 
+    </div>
+    <div class = "row" id="footer2">
+        <p class = "rights">Copyright © {text:year}, <span id="uppercase">{text:alias}</span> </p>
+    </div>
+    </div>
+    <!--End of large screen-->
+    <!--Small Screen-->
+    <div class="container-fluid visible-xs">
+    <div class ="row" id="footer">
+        <h1 class="footer-title footer-title-small">The Author: </h1>
+    </div>
+    <div class = "row author-picture" id="footer">
+            <img src="{image:user}" class="img-circle" alt="Cinque Terre" width="150" height="150">
+    </div> 
+    <div class = "row" id="footer">
+        <div class="contact-bar-small"><div id="centralise"><a class="contact-me" href="{text:contact me url 1}"><i class="fa fa-google-plus-square fa-2x"></i>	&nbsp;	&nbsp;</a><a class="contact-me" href="{text:contact me url 2}"><i class="fa fa-instagram fa-2x"></i>	&nbsp; 	&nbsp;</a><a class="contact-me" href="{text:contact me url 3}"><i class="fa fa-heart fa-2x"></i>	&nbsp;	&nbsp;</a><a class="contact-me" href="{text:contact me url 4}"><i class="fa fa-youtube-square fa-2x"></i>	&nbsp;	&nbsp;</a><a class="contact-me" href="{text:complete blog url}{text:navigate to tags}"><i class="fa fa-compass fa-2x"></i>	&nbsp;	&nbsp;</a></div></div>
+    </div>
+    <div class = "row" id="footer2">
+        <p class = "rights">Copyright © {text:year}, <span id="uppercase">{text:alias}</span> </p>
+    </div>
+    </div>
+    <!--End of small screen-->
+    <!--End of footer-->
+
+    </body>
+</html>
